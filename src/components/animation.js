@@ -1,7 +1,10 @@
 import Lottie from "lottie-react";
 import React from "react";
+import dynamic from "next/dynamic";
+
 
 const AnimationLottie = ({ animationPath, width }) => {
+  if (typeof window === "undefined") return null; // Prevent SSR issues
   const defaultOptions = {
     loop: true,
     autoplay: true,
@@ -17,4 +20,4 @@ const AnimationLottie = ({ animationPath, width }) => {
   );
 };
 
-export default AnimationLottie;
+export default dynamic(() => Promise.resolve(AnimationLottie), { ssr: false });

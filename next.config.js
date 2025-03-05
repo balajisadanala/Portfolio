@@ -1,17 +1,20 @@
-const dotenv = require('dotenv')
-dotenv.config()
+const dotenv = require('dotenv');
+dotenv.config();
 
 const nextConfig = {
-  reactStrictMode: true, // enabled react-strict mode
+  reactStrictMode: true,
 
   images: {
-    domains: [
-      'i.ibb.co',
-    ],
-    unoptimized: true,
+    domains: ['i.ibb.co'],
   },
 
-  output: 'export',
+  webpack: (config) => {
+    config.module.rules.push({
+      test: /\.json$/,
+      type: 'json',
+    });
+    return config;
+  },
 };
 
 module.exports = nextConfig;
