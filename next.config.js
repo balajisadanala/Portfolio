@@ -6,6 +6,7 @@ const nextConfig = {
 
   images: {
     domains: ['i.ibb.co'],
+    unoptimized: true
   },
 
   webpack: (config) => {
