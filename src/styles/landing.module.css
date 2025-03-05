@@ -1,0 +1,299 @@
+.landing {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/* Add this CSS to your stylesheet */
+.scrollbar-pointer::-webkit-scrollbar {
+  width: 8px; /* Set scrollbar width */
+}
+
+.scrollbar-pointer::-webkit-scrollbar-thumb {
+  background-color: blue; /* Set scrollbar color */
+  cursor: pointer; /* Set cursor to pointer */
+}
+.landingContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  position: relative;
+}
+
+/* Add this CSS to your stylesheet */
+.scrollable-list {
+  overflow-y: scroll ; /* Hide scrollbar by default */
+}
+
+.scrollable-list:hover {
+  overflow-y: scroll; /* Show scrollbar on hover */
+  scrollbar-width: thin; /* Thin scrollbar for Firefox */
+}
+
+.scrollable-list::-webkit-scrollbar {
+  width: 0; /* Hide scrollbar for WebKit browsers */
+}
+
+.scrollable-list:hover::-webkit-scrollbar {
+  width: 8px; /* Thin scrollbar on hover for WebKit browsers */
+}
+
+.landingContainerLeft {
+  flex: 60%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.lclContent {
+  margin: 3rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.landingSocial {
+  font-size: 35px;
+  margin: 0 1rem;
+  transition: transform 0.5s;
+}
+
+.landingSocial:hover {
+  transform: scale(1.2);
+}
+
+.landingContainerRight {
+  flex: 65%;
+  height: 100%;
+  background-color: #eaeaea;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.lcrContent {
+  width: 75%;
+  margin-right: 7rem;
+  font-family: var(--primaryFont);
+  font-style: normal;
+}
+
+.lcrContent h6 {
+  font-weight: 500;
+  font-size: 1.25rem;
+  margin-bottom: -0.85rem;
+  opacity: 0.8;
+}
+
+.lcrContent h1 {
+  font-weight: 600;
+  font-size: 2.25rem;
+  line-height: 110%;
+  margin: 1rem 0;
+}
+
+.lcrContent p {
+  margin-top: 1.45rem;
+  font-weight: 500;
+  font-size: 1.15rem;
+  opacity: 0.7;
+}
+
+.lcrButtonContainer {
+  margin-top: 2rem;
+  width: 350px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: space-between;
+  font-family: "var(--primaryFont)", sans-serif;
+}
+.imageAndText {
+  display: flex;
+  align-items: center;
+}
+
+.landingImg {
+  margin-right: 20px; /* Space between image and text */
+  width: 100px; /* Set fixed width */
+  height: 100px; /* Set fixed height */
+  border-radius: 50%; /* Make it circular */
+  object-fit: cover; /* Ensure the image covers the area */
+  box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 1100px) {
+
+  .lclContent {
+    margin: 2rem;
+  }
+
+  .lcrContent h6 {
+    font-size: 1.1rem;
+  }
+
+  .lcrContent h1 {
+    font-size: 3rem;
+  }
+
+  .lcrContent p {
+    margin-top: 0.3rem;
+    margin-bottom: 1rem;
+    font-weight: 500;
+    font-size: 1rem;
+  }
+
+  .lcrButtonContainer {
+    margin-top: 1rem;
+    flex-direction: column;
+    width: 200px;
+    height: 120px;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 900px) {
+
+
+  .landingSocial {
+    font-size: 30px;
+  }
+  .lcrContent {
+    width: 80%;
+    margin-top: 10%;
+    margin-right: 6%;
+  }
+
+  .lcrButtonContainer {
+    margin-top: 1rem;
+    flex-direction: column;
+    width: 200px;
+    height: 120px;
+    align-items: flex-start;
+  }
+  .lcrButtonContainer button:nth-child(2) {
+    display: none;
+  }
+}
+.scrollText {
+  position: absolute;
+  bottom: 20px;
+  left: 48%;
+  transform: translateX(-50%);
+  font-size: 16px;
+  color: #666;
+  opacity: 1;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+  animation: bounce 2s infinite;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.arrow {
+  font-size: 24px;
+  margin-top: 5px;
+}
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+      transform: translateX(-50%) translateY(0);
+  }
+  40% {
+      transform: translateX(-50%) translateY(-10px);
+  }
+  60% {
+      transform: translateX(-50%) translateY(-5px);
+  }
+}
+
+.hidden {
+  opacity: 0;
+}
+@media (max-width: 600px) {
+  .landingContainer {
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .scrollText {
+    top: 2%;
+    font-size: 10px;
+  }
+  .arrow {
+    font-size: 10px;
+  }
+
+  .landingContainerLeft {
+    flex: initial;
+    width: 100%;
+    height: auto;
+    margin-top: 20%;
+  }
+  .landingSocial {
+    display: none;
+  }
+  .landingContainerRight {
+    box-sizing: border-box;
+    padding: 0 2rem;
+    flex: initial;
+    height: 70%;
+    width: 100%;
+    background-color: #eaeaea;
+    align-items: center;
+    justify-content: center;
+    padding: 0 2rem;
+  }
+  .lcrContent {
+    margin-top: 20%;
+    margin-right: initial;
+    width: 100%;
+  }
+  .lcrContent .typedHeader {
+    display: block;
+    font-size: 1rem;
+    text-align: center;
+  }
+  .lcrContent h1 {
+    font-size: 2.5rem;
+    text-align: center;
+  }
+  .lcrContent p {
+    font-size: 0.95rem;
+    text-align: center;
+    margin: 0 auto;
+    width: 90%;
+  }
+  .lcrButtonContainer {
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .lcrButtonContainer button {
+    margin-top: -20%;
+  }
+}
+
+@media (max-width: 500px) {
+  .lcrContent {
+    margin-top: 35%;
+  }
+}
+
+@media (max-width: 370px) {
+  .lcrContent {
+    margin-top: 60%;
+  }
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) and (-webkit-device-pixel-ratio: 2) and (device-aspect-ratio: 2/3) {
+  .landing {
+    height: 100%;
+  }
+
+
+}
