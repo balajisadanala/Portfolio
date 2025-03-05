@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import {
-  About, Blog, Contacts, Education,
+ Contacts, Education,
   Experience, Landing, Navbar, Projects, Skills
 } from '../components';
 import BackToTop from '../components/back-to-top/back-to-top';
@@ -27,7 +27,7 @@ function HomePage({ blogs }) {
   return (
     <>
       <BackToTop />
-      {/* <ChangeTheme /> */}
+
       <Navbar />
       <Landing />
 
@@ -38,7 +38,7 @@ function HomePage({ blogs }) {
       <Skills />
       <Projects />
       <Education />
-      {/* <Blog blogs={blogs} /> */}
+
       <Contacts />
     </>
   )
