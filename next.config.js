@@ -8,8 +8,10 @@ const nextConfig = {
     domains: [
       'i.ibb.co',
     ],
+    unoptimized: true,
   },
 
+  output: 'export',
 };
 
 module.exports = nextConfig;
