@@ -1,4 +1,4 @@
-"use client"
+
 import { Container } from '@material-ui/core';
 import React, { useContext } from 'react';
 import experience from '../../assets/lottie/development.json';
